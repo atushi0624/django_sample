@@ -1,0 +1,40 @@
+{% extends "img/base.html" %}
+{% block file_page %}active{% endblock %}
+{% block content %}
+
+  <div class="container">
+      <a href="{% url 'img:file_create' %}" class="btn btn-outline-primary">
+          新規作成
+      </a>      
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ファイル名</th>
+          <th>判定結果</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for file in imgfiles_list %}
+          <tr>
+            <td>{{ file.get_filename }}</td>
+            <td>{{ file.cat }}</td>
+            <td>
+                <a href="{% url 'file_update' file.pk %}" class="btn btn-outline-primary btn-sm">
+                  更新
+                </a>
+                <form class="delete-form" action="{% url 'file_delete' file.pk %}" method="POST">
+                    <button type="button" class="btn btn-outline-primary btn-sm delete">削除</button>
+                    {% csrf_token %}
+                </form>
+
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="text-center">
+      {% include "img/page.html" %}
+    </div>
+  </div>
+{% endblock %}

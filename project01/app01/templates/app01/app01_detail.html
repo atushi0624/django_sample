@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+  <div class="container">
+    <div class="text-left">
+     <h2 class="text-primary">
+      ＤｅｔａｉｌＶｉｅｗページ
+     </h2>
+    </div>
+
+    <div >
+      <p>タイトル：{{ object.title }}</p>
+      <p>内容：{{ object.content }}</p>
+      <p>登録日：{{ object.posted_date}}</p>
+    </div>  
+    
+    <div class="text-left">
+       <a href='/index' class="btn btn-outline-primary">トップページへ</a>
+       <a class="btn btn-outline-primary" href="javascript:void(0);" onclick="window.history.back();">戻る</a>
+    </div>
+
+  </div>
+
+{% endblock %}
