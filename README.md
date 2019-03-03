@@ -1,0 +1,2 @@
+# django_sample
+Dajnagoでリレーションの検索及びページネーションのサンプル
