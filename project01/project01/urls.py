@@ -28,7 +28,6 @@ urlpatterns = [
     path('create/', App01CreateView.as_view(), name="create"),
     path('detail/<int:pk>', App01DetailView.as_view(), name="detail"),
     path('update/<int:pk>', App01UpdateView.as_view(), name="update"),
-    path('myapp/index', FoodListView.as_view(), name='Foodlist'),
 
 ]
 

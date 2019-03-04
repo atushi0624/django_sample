@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pure_pagination',
     'app01',
-    'myapp',
 ]
 
 # for django-pure-pagination settings
